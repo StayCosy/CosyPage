@@ -2,6 +2,6 @@
 layout: frontpage
 ---
 
-## Welcome!
+## 千锤百炼觅金石，劈破旁门见明月!
 
-It's cosy’s Coding house, witch recorded my growth.
+扎实的基础，创新的方式，两者相辅相成，缺一不可
