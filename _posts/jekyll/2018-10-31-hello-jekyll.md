@@ -4,6 +4,27 @@ comments: true
 categories: diary
 ---
 
-## Empty diary template
+## JMockit+J9+Windows环境会出现以下异常
 
-Empty post template
+JMockit的Mockup类会利用动态Instrumentation创建load事件监听agent，在创建该Agent时会调用SUN JVM Attah APT与JVM中的应用进程进行通讯，调用native方法时会出现JVM_EnqueueOperation() Stubbed异常。考虑window时环境与Linux环境实现机制不同，不确定Linux环境是否存在同意的问题。
+
+JMockit原理：ASM+Instrumentation
+JMockit会监听添加了Mocked注解的类，在运行的时候获取带该注解的类，然后调用new MockedUp去创建修改后的class文件，利用ASM提供的API在原类的基础上修改，在JVM运行的时候，通过动态Instrumentation特性监听类加载事件，并在目标类加载之前利用Sun JVM Attach API 与JVM内的应用进程通讯，将加强后的class替换JVM内的原程序。
+1.在Window采用的是pipe管道通讯机制，JMockit实现了一套WindowsVirtualMahine，excute方法会调用Sun提供的Native方法enqueue发送指令给进程；
+2.在Linux采用的是Socket，JMockit实现了一套LinuxVirtualMachine，excute方法会利用socket与进程进行通讯。
+
+package com.cosy.spring.batch.demo;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@MapperScan("com.cosy.spring.batch.demo.dao")
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+
