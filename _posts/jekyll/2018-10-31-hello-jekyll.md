@@ -13,14 +13,14 @@ JMockit会监听添加了Mocked注解的类，在运行的时候获取带该注�
 1.在Window采用的是pipe管道通讯机制，JMockit实现了一套WindowsVirtualMahine，excute方法会调用Sun提供的Native方法enqueue发送指令给进程；
 2.在Linux采用的是Socket，JMockit实现了一套LinuxVirtualMachine，excute方法会利用socket与进程进行通讯。
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-@SpringBootApplication
-@MapperScan("com.cosy.spring.batch.demo.dao")
-public class DemoApplication {
+    import org.mybatis.spring.annotation.MapperScan;
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    @SpringBootApplication
+    @MapperScan("com.cosy.spring.batch.demo.dao")
+    public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-}
+    }
 
