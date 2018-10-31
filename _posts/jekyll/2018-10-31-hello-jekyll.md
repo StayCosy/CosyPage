@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-categories: diary
+categories: jekyll
 ---
 
 ## JMockit+J9+Windows环境会出现以下异常
