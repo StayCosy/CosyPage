@@ -19,9 +19,16 @@ comments: true
 
 5.将下载的主题文件提交的git.
 
+![image3]({{ site.url }}/downloads/image/jekyll/3.png)
+
 6.访问查看效果.
 
+![image4]({{ site.url }}/downloads/image/jekyll/4.png)
+![image5]({{ site.url }}/downloads/image/jekyll/5.png)
+
 7.登录[jekyll][jekyll]学习编辑方式.
+
+![image6]({{ site.url }}/downloads/image/jekyll/6.png)
 
 8.实现个性化的调整.
 
