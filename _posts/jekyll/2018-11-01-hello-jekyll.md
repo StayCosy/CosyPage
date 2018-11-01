@@ -4,7 +4,7 @@ title:  github+jekyll->blog
 categories: jekyll
 comments: true
 ---
-作为第一次组建自己的私人blog空间，记录下方便后续学习。
+>作为第一次组建自己的私人blog空间，记录下方便后续学习。
 
 1.登录github账号.
 2.新建blog项目仓库.
